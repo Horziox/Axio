@@ -53,8 +53,8 @@ bot.on('guildMemberAdd', member=> {
   .setTitle(member.user.tag)
   .setThumbnail(`${member.user.displayAvatarURL}`)
   .setDescription(bvn)
-  .addField("Règlement", "C'est par ici : <#520225211149320196>")
-  .addField("Vérification", "Envoie la plus belle photo...\nDe ton carnet de correspondance...\n<#533251614279073794>", true)
+  .addField("Règlement", "<#520225211149320196>")
+  .addField("Vérification", "<#533251614279073794>", true)
   .setColor("7ED321")
   .setTimestamp()
   bot.channels.get("644202587377238023").send({embed});
