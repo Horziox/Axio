@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "discord.js": "^11.3.2",
-    "fs": "^0.0.1"
+    "fs": "^0.0.1-security"
   },
   "devDependencies": {},
   "scripts": {
