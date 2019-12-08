@@ -7,6 +7,7 @@ module.exports = {
     description: "Averti un membre.",
     usage: "@mention/ID raison",
     guildOnly: true,
+    isDisable : true,
     execute(message, args, bot, prefix) {
         message.delete();
         if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply("tu n\'as pas les permissions nécessaires pour avertir quelqu\'un.");
