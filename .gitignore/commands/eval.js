@@ -5,6 +5,7 @@ module.exports = {
     description: "Commande secrète...",
     usage: "<input>",
     execute(message, args, bot, prefix) {
+        message.delete();
         if(message.author.id ==="340212760870649866") {
             let toEval = args.join(" ");
             let evaluated = inspect(eval(toEval, {depth: 0}))
