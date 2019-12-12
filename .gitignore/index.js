@@ -101,7 +101,7 @@ bot.on('message', message => {
     command.execute(message, args, bot, prefix);
   } 
   catch (error) {
-    message.reply(' oups... une erreur est surnenue !:thinking:');
+    message.reply(' oups... une erreur est survenue !:thinking:');
     let embed = new Discord.RichEmbed()
     .setAuthor(`${message.author.username}`,`${message.author.displayAvatarURL}`)
     .setTitle("Erreur")
