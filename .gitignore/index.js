@@ -4,11 +4,9 @@ const fs = require("fs");
 
 bot.commands = new Discord.Collection()
 bot.fun = new Discord.Collection()
-bot.moderation = new Discord.Collection()
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 const funFiles = fs.readdirSync('./fun').filter(file => file.endsWith('.js'));
-const moderationFiles = fs.readdirSync('./moderation').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
@@ -18,11 +16,6 @@ for (const file of funFiles) {
 	const command = require(`./fun/${file}`);
 	bot.fun.set(command.name, command);
 }
-for (const file of moderationFiles) {
-	const command = require(`./moderation/${file}`);
-	bot.moderation.set(command.name, command);
-}
-
 
 var prefix = "!";
 
@@ -85,7 +78,7 @@ bot.on('message', message => {
   const args = message.content.slice(prefix.length).split(/ +/)
   const commandName = args.shift().toLowerCase();
     
-  const command = bot.commands.get(commandName) || bot.fun.get(commandName) || bot.moderation.get(commandName)
+  const command = bot.commands.get(commandName) || bot.fun.get(commandName)
 
   if(!command) return
 
