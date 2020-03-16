@@ -66,6 +66,7 @@ bot.on('guildMemberRemove', member => {
 	.setTitle(member.user.tag)
 	.setThumbnail(`${member.user.displayAvatarURL}`)
 	.setDescription(gb)
+	.setTimestamp()
 	bot.channels.get("644202587377238023").send({embed});
 })
 
