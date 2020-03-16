@@ -34,7 +34,7 @@ bot.on('ready', function() {
 
 bot.on('guildMemberAdd', member=> {
   var msg = [
-	  `Oh !\nUn ${member.user} vient d\'apparaitre sur le serveur !:scream:`,
+	  `Oh !\nUn(e) ${member.user} vient d\'apparaitre sur le serveur !:scream:`,
 	  `Hey salut !:partying_face:\nJ'espère que tu as pensé(e) à la pizza ${member.user} ?:sweat_smile:`,
 	  `Hé ! Écoutez ! ${member.user} nous a rejoint !`,
 	  `Où est ${member.user} ? Dans le serveur !`,
