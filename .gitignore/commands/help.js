@@ -18,7 +18,7 @@ module.exports = {
         } else {
             const data = [];
             const commandName = args[0].toLowerCase();
-            const command = bot.commands.get(commandName) || bot.fun.get(commandName) || bot.moderation.get(commandName)
+            const command = bot.commands.get(commandName) || bot.fun.get(commandName);
 
             if (!command) {
 			    return message.reply("Ta commande est invalide ou n\'existe pas !:eyes:");
