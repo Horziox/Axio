@@ -9,7 +9,7 @@ module.exports = {
             let embed = new Discord.RichEmbed()
             .setAuthor(bot.user.username, bot.user.displayAvatarURL)
             .setTitle("Liste de mes commandes")
-            .addField("Informations", "`"+prefix+"help` Affiche ce message.\n`"+prefix+"ping` Permet de controler mon ping.\n`"+prefix+"warns` Regarde ton nombre de warns.\n`"+prefix+"invite` Récupère le lien du serveur !")
+            .addField("Informations", "`"+prefix+"help` Affiche ce message.\n`"+prefix+"ping` Permet de controler mon ping.\n`"+prefix+"invite` Récupère le lien du serveur !")
             .addField("Fun", "`"+prefix+"avatar` récupère ton avatar ou celui de la personne mentionnée/ID.\n`"+prefix+"info` Récupère des infos sur le serveur, toi, moi,...")
             .setColor("#FFFFF")
             .setTimestamp()
