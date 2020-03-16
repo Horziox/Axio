@@ -13,7 +13,4 @@
   },
   "author": "Horziox",
   "license": "MIT",
-  "engines": {
-    "node": "13.x"
-  },
 }
