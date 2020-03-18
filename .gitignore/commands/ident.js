@@ -10,6 +10,6 @@ module.exports = {
         .setTitle("Vérification")
         .setDescription("Pensez à vous identifier en envoyant une photo de votre carte de self ou de votre carnet afin d\'accéder au reste des salons !:wink:")
         .setColor("#FFFFF")
-        message.channel.send("@everyone", embed);
+        message.channel.send("@here", embed);
     }
 }
