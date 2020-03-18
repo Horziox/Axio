@@ -19,8 +19,8 @@ module.exports = {
             .setFooter(`Commande faite par ${message.author.username}`,`${message.author.displayAvatarURL}`)
             message.channel.send({embed});
         } else if (info==="serveur") {
+            
             let event = new Date(message.guild.createdAt);
-            let base = (event.toLocaleDateString('fr-FR', { day: 'numeric', month: 'numeric', year: 'numeric' })).split("-")
 
             let embed = new Discord.RichEmbed()
             .setThumbnail(message.guild.iconURL)
@@ -30,7 +30,7 @@ module.exports = {
             .addField("Nombres de membres :",message.guild.members.size, true)
             .addField("Nombres de roles :",message.guild.roles.size, true)
             .addField("Nombres de salons totaux :",message.guild.channels.size)
-            .addField("Date de création :",base[2]+"/"+base[1]+"/"+base[0]+" à "+event.toLocaleTimeString('fr-FR'))
+            .addField("Date de création :", event.getDate()+"/"+event.getMonth()+"/"+event.getFullYear())
             .setTimestamp()
             .setColor("#FFFFF")
             .setFooter("Commande faite par "+`${message.author.username}`,`${message.author.displayAvatarURL}`)
@@ -44,7 +44,6 @@ module.exports = {
             }
             
             let event = new Date(info.createdAt);
-            let base = (event.toLocaleDateString('fr-FR', { day: 'numeric', month: 'numeric', year: 'numeric' })).split("-")
             
             let embed = new Discord.RichEmbed()
             .setThumbnail(info.displayAvatarURL)
@@ -54,7 +53,7 @@ module.exports = {
             .addField("Tag :",info.tag, true)
             .addField("Identifiant :", info.id, true)
             .addField("Joue à :", info.presence.game ? info.presence.game.name : '*Aucune activitée*')
-            .addField("Création du compte :", base[2]+"/"+base[1]+"/"+base[0]+" à "+event.toLocaleTimeString('fr-FR'))
+            .addField("Création du compte :", event.getDate()+"/"+event.getMonth()+"/"+event.getFullYear())
             .setTimestamp()
             .setColor("#FFFFF")
             message.channel.send({embed});
