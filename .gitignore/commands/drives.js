@@ -6,7 +6,7 @@ module.exports = {
     execute(message, args, bot, prefix) {
         message.delete();
         if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return
-        let embed = new Discord.RichEmbed()
+        let embed = new Discord.messageEmbed()
         .setTitle("Drives Cours")
         .setDescription("Voici la liste des différents drives diponibles !")
         .addField("Informations", "[Infos Parents Eleves](https://drive.google.com/open?id=1eHMP0uFgkN-37IAooy4w_JEP9fl4rllA)\n[Courriers Divers](https://drive.google.com/open?id=1l8HV88ExYSb3DwPz6lhfMDuhQPyzkxdt)")
