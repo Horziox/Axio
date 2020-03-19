@@ -1,4 +1,4 @@
-econst Discord = require("discord.js");
+const Discord = require("discord.js");
 module.exports = {
     name: "help",
     description: "Besoin d\'aide ? Cette commande est faite pour toi !",
