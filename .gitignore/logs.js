@@ -42,6 +42,7 @@ module.exports = {
         });
         //Connexion/Déconnexion/Changement Vocal
         bot.on('voiceStateUpdate', (oldState, newState) => {
+            console.log(oldState)
             const hook = new Discord.WebhookClient('690172809376301121', process.env.whVocal);
         
             if((oldState.channelID == null || oldState.channelID == undefined) && newState.channelID != null) {
