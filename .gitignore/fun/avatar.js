@@ -4,6 +4,7 @@ module.exports = {
     name: "avatar",
     description: "Récupère ton avatar ou celui de la personne mentionnée !",
     usage: "@mention ou identifiant",
+    isDisable: true,
     execute(message, args, bot, prefix) {
         let member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]))
         if (!member) {
