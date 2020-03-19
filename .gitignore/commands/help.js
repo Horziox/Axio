@@ -13,7 +13,7 @@ module.exports = {
             .addField("Fun", "`"+prefix+"avatar` récupère ton avatar ou celui de la personne mentionnée/ID.\n`"+prefix+"info` Récupère des infos sur le serveur, toi, moi,...")
             .setColor("#FFFFF")
             .setTimestamp()
-            .setFooter(`Commande faite par ${message.author.username}`,`${message.author.displayAvatarURL}`)
+            .setFooter(`Commande faite par ${message.author.username}`, message.author.displayAvatarURL())
             message.channel.send({embed});
         } else {
             const data = [];
