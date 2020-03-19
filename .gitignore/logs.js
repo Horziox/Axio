@@ -47,7 +47,7 @@ module.exports = {
             if((oldState.channelID == null || oldState.channelID == undefined) && newState.channelID != null) {
                 let embed = new Discord.RichEmbed()
                 .setTitle("Connexion Vocale")
-                .setAuthor(oldState.member.user.tag, oldState.member.user.displayAvatarURL)
+                .setAuthor(oldState.member.tag, oldState.member.displayAvatarURL)
                 .addField("Salon", newState.channel.name, true)
                 .addField("Membre", "<@"+oldState.member.id+">\n`"+oldState.member.id+"`", true)
                 .setColor("#25e64b")
@@ -56,7 +56,7 @@ module.exports = {
             } else if((newState.channelID == null || newState.channelID == undefined) && oldState.channelID != null) {
                 let embed = new Discord.RichEmbed()
                 .setTitle("Déconnexion Vocale")
-                .setAuthor(newState.member.user.tag, newState.member.user.displayAvatarURL)
+                .setAuthor(newState.member.tag, newState.member.displayAvatarURL)
                 .addField("Salon quitté", oldState.channel.name, true)
                 .addField("Membre", "<@"+oldState.member.id+">\n`"+oldState.member.id+"`", true)
                 .setColor("#d1310d")
@@ -65,7 +65,7 @@ module.exports = {
             } else {
                 let embed = new Discord.RichEmbed()
                 .setTitle("Changement Salon Vocale")
-                .setAuthor(newState.member.user.tag, newState.member.user.displayAvatarURL)
+                .setAuthor(newState.member.tag, newState.member.displayAvatarURL)
                 .setDescription("`"+oldState.channel.name+"` -> `"+newState.channel.name+"`")
                 .addField("Membre", "<@"+oldState.member.id+">\n`"+oldState.member.id+"`", true)
                 .setColor("#0d9dd1")
