@@ -50,7 +50,7 @@ bot.on('message', message => {
 	  message.reply(' oups... une erreur est survenue !:thinking:');
 	  const hook = new Discord.WebhookClient('690172280914837571', process.env.whDebug);
 	  let embed = new Discord.messageEmbed()
-	  .setAuthor(`${message.author.username}`,`${message.author.displayAvatarURL}`)
+	  .setAuthor(message.author.tag, message.author.displayAvatarURL())
 	  .setTitle("Erreur")
 	  .setDescription("```"+error.message+"```")
 	  .addField("Auteur", message.author.tag)
