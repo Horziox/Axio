@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 module.exports = {
     name: "info",
+    isDisable: true,
     description: "Récupère des infos sur le bot, le serveur, votre compte ou celui de la personne mentionnée !",
     usage: "<ordre> (ordre = bot, serveur ou mention utilisateur)",
     execute(message, args, bot, prefix) {
