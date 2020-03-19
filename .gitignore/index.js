@@ -49,12 +49,12 @@ bot.on('message', message => {
   catch (error) {
 	  message.reply(' oups... une erreur est survenue !:thinking:');
 	  const hook = new Discord.WebhookClient('690172280914837571', process.env.whDebug);
-	  let embed = new Discord.RichEmbed()
+	  let embed = new Discord.messageEmbed()
 	  .setAuthor(`${message.author.username}`,`${message.author.displayAvatarURL}`)
 	  .setTitle("Erreur")
 	  .setDescription("```"+error.message+"```")
 	  .addField("Auteur", message.author.tag)
-	  .addField("Commande", message, true)
+	  .addField("Commande", message.content, true)
 	  .addField("Dans le", message.channel, true)
 	  .setColor("#3d424a")
 	  .setTimestamp()
