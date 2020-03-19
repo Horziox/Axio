@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+econst Discord = require("discord.js");
 module.exports = {
     name: "help",
     description: "Besoin d\'aide ? Cette commande est faite pour toi !",
@@ -6,7 +6,7 @@ module.exports = {
 
         let demande = message.content.split(" ").slice(1).join();
         if (!demande) {
-            let embed = new Discord.RichEmbed()
+            let embed = new Discord.messageEmbed()
             .setAuthor(bot.user.username, bot.user.displayAvatarURL)
             .setTitle("Liste de mes commandes")
             .addField("Informations", "`"+prefix+"help` Affiche ce message.\n`"+prefix+"ping` Permet de controler mon ping.\n`"+prefix+"invite` Récupère le lien du serveur !")
