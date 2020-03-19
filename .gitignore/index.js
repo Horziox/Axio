@@ -22,7 +22,7 @@ logs.logs(bot)
 
 var prefix = "!";
 
-bot.login("NjQ2MDQ5Mjk1NTQzNDM1MjY2.XdLgkQ.UQaDdI99pN41TjLVdAJ5WE0cztw");
+bot.login(process.env.DiscordToken);
 
 bot.on('message', message => {
 
