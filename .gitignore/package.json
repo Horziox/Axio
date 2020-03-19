@@ -1,0 +1,16 @@
+{
+  "name": "axio",
+  "version": "1.0.0",
+  "description": "Bot Discord MDL",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.0.2",
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Horziox",
+  "license": "MIT"
+}
