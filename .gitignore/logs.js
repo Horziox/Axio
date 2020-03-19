@@ -7,7 +7,7 @@ module.exports = {
             console.log("Ready")
             const hook = new Discord.WebhookClient('690172280914837571', process.env.whDebug);
             let embed = new Discord.RichEmbed()
-            .setAuthor(bot.user.username, bot.user.displayAvatarURL())
+            .setAuthor(bot.user.username, bot.user.displayAvatarURL)
             .setTitle("Redémarrage effectué")
             .setColor("#00fc58")
             .setTimestamp()
@@ -18,7 +18,7 @@ module.exports = {
             const hook = new Discord.WebhookClient('690173157600002067', process.env.whMessage);
             let embed = new Discord.RichEmbed()
             .setTitle("Message supprimé")
-            .setAuthor(message.author.tag, message.author.displayAvatarURL())
+            .setAuthor(message.author.tag, message.author.displayAvatarURL)
             .setDescription(message.content)
             .addField("Salon", "<#"+message.channel.id+">", true)
             .addField("Auteur", "<@"+message.author+">\n`"+message.author.id+"`", true)
@@ -31,7 +31,7 @@ module.exports = {
             const hook = new Discord.WebhookClient('690173157600002067', process.env.whMessage);
             let embed = new Discord.RichEmbed()
             .setTitle("Message mis à jour")
-            .setAuthor(oldMessage.author.tag, oldMessage.author.displayAvatarURL())
+            .setAuthor(oldMessage.author.tag, oldMessage.author.displayAvatarURL)
             .setDescription("**Ancien :**\n"+oldMessage.content+"\n**Nouveau :**\n"+newMessage.content)
             .addField("Salon", "<#"+oldMessage.channel.id+">", true)
             .addField("Auteur", "<@"+oldMessage.author+">\n`"+oldMessage.author.id+"`", true)
@@ -47,7 +47,7 @@ module.exports = {
             if((oldState.channelID == null || oldState.channelID == undefined) && newState.channelID != null) {
                 let embed = new Discord.RichEmbed()
                 .setTitle("Connexion Vocale")
-                .setAuthor(oldState.member.user.tag, oldState.member.user.displayAvatarURL())
+                .setAuthor(oldState.member.user.tag, oldState.member.user.displayAvatarURL)
                 .addField("Salon", newState.channel.name, true)
                 .addField("Membre", "<@"+oldState.member.id+">\n`"+oldState.member.id+"`", true)
                 .setColor("#25e64b")
@@ -56,7 +56,7 @@ module.exports = {
             } else if((newState.channelID == null || newState.channelID == undefined) && oldState.channelID != null) {
                 let embed = new Discord.RichEmbed()
                 .setTitle("Déconnexion Vocale")
-                .setAuthor(newState.member.user.tag, newState.member.user.displayAvatarURL())
+                .setAuthor(newState.member.user.tag, newState.member.user.displayAvatarURL)
                 .addField("Salon quitté", oldState.channel.name, true)
                 .addField("Membre", "<@"+oldState.member.id+">\n`"+oldState.member.id+"`", true)
                 .setColor("#d1310d")
@@ -65,7 +65,7 @@ module.exports = {
             } else {
                 let embed = new Discord.RichEmbed()
                 .setTitle("Changement Salon Vocale")
-                .setAuthor(newState.member.user.tag, newState.member.user.displayAvatarURL())
+                .setAuthor(newState.member.user.tag, newState.member.user.displayAvatarURL)
                 .setDescription("`"+oldState.channel.name+"` -> `"+newState.channel.name+"`")
                 .addField("Membre", "<@"+oldState.member.id+">\n`"+oldState.member.id+"`", true)
                 .setColor("#0d9dd1")
