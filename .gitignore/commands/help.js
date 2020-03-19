@@ -6,7 +6,7 @@ module.exports = {
 
         let demande = message.content.split(" ").slice(1).join();
         if (!demande) {
-            let embed = new Discord.messageEmbed()
+            let embed = new Discord.MessageEmbed()
             .setAuthor(bot.user.username, bot.user.displayAvatarURL)
             .setTitle("Liste de mes commandes")
             .addField("Informations", "`"+prefix+"help` Affiche ce message.\n`"+prefix+"ping` Permet de controler mon ping.\n`"+prefix+"invite` Récupère le lien du serveur !")

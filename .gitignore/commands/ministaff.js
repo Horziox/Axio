@@ -6,7 +6,7 @@ module.exports = {
     execute(message, args, bot, prefix) {
         message.delete();
         if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return
-        let embed = new Discord.messageEmbed()
+        let embed = new Discord.MessageEmbed()
         .setTitle("Recrutement Mini Staff")
         .setDescription("La période de recrutement des **Mini Staff** est actuellement fermée !\nN'hésites pas à surveiller le <#520226617558040586> afin d'être dans les premiers informés lorsque le recrutement sera à nouveau ouvert ! ^^")
         .setColor("#FFFFF")
