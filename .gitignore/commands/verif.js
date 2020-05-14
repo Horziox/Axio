@@ -16,6 +16,6 @@ module.exports = {
         member.roles.add('534802802514460672');
         member.setNickname(name);
 
-        message.channel.send("**"+name+"** à bien été validé(e) ! :tada:");
+        message.channel.send("**"+name+"** a bien été validé(e) ! :tada:");
     }
 };
