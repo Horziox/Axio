@@ -10,16 +10,16 @@ module.exports = {
         if (!member) {
             let embed = new Discord.MessageEmbed()
             .setTitle(`Voici ta photo de profil ${message.author.username} !`)
-            .setImage(message.author.displayAvatarURL())
+            .setImage(message.author.displayAvatarURL({dynamic: true}))
             .setColor("RANDOM")
             .setTimestamp()
             message.channel.send(embed);
         } else {
             let embed = new Discord.MessageEmbed()
             .setTitle(`Voici la photo de profil de ${member.user.username} !`)
-            .setImage(member.user.displayAvatarURL())
+            .setImage(member.user.displayAvatarURL({dynamic: true}))
             .setColor("RANDOM")
-            .setFooter(`Commande faîte par ${message.author.username}`,`${message.author.displayAvatarURL}`)
+            .setFooter(`Commande faîte par ${message.author.username}`, message.author.displayAvatarURL({dynamic: true}))
             .setTimestamp()
             message.channel.send(embed);
         };
