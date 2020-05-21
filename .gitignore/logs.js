@@ -7,7 +7,7 @@ module.exports = {
             console.log("Ready")
             const hook = new Discord.WebhookClient('690172280914837571', process.env.whDebug);
             let embed = new Discord.MessageEmbed()
-            .setAuthor(bot.user.username, bot.user.displayAvatarURL())
+            .setAuthor(bot.user.username, bot.user.displayAvatarURL({dynamic: true}))
             .setTitle("Redémarrage effectué")
             .setColor("#00fc58")
             .setTimestamp()
@@ -19,7 +19,7 @@ module.exports = {
             const hook = new Discord.WebhookClient('690173157600002067', process.env.whMessage);
             let embed = new Discord.MessageEmbed()
             .setTitle("Message supprimé")
-            .setAuthor(message.author.tag, message.author.displayAvatarURL())
+            .setAuthor(message.author.tag, message.author.displayAvatarURL({dynamic: true}))
             .setDescription(message.content)
             .addField("Salon", "<#"+message.channel.id+">", true)
             .addField("Auteur", "<@"+message.author.id+">\n`"+message.author.id+"`", true)
@@ -29,12 +29,13 @@ module.exports = {
         });
         //Message Update
         bot.on('messageUpdate', (oldMessage, newMessage) => {
+            if(oldMessage.content == newMessage.content) return
             if(oldMessage.channel.id == "689931230568775683") return
             if(oldMessage.author.bot) return
             const hook = new Discord.WebhookClient('690173157600002067', process.env.whMessage);
             let embed = new Discord.MessageEmbed()
             .setTitle("Message mis à jour")
-            .setAuthor(oldMessage.author.tag, oldMessage.author.displayAvatarURL())
+            .setAuthor(oldMessage.author.tag, oldMessage.author.displayAvatarURL({dynamic: true}))
             .setDescription("**Ancien :**\n"+oldMessage.content+"\n**Nouveau :**\n"+newMessage.content)
             .addField("Salon", "<#"+oldMessage.channel.id+">", true)
             .addField("Auteur", "<@"+oldMessage.author.id+">\n`"+oldMessage.author.id+"`", true)
@@ -51,7 +52,7 @@ module.exports = {
             if((oldState.channelID == null || oldState.channelID == undefined) && newState.channelID != null) {
                 let embed = new Discord.MessageEmbed()
                 .setTitle("Connexion Vocale")
-                .setAuthor(oldState.member.user.tag, oldState.member.user.displayAvatarURL())
+                .setAuthor(oldState.member.user.tag, oldState.member.user.displayAvatarURL({dynamic: true}))
                 .addField("Salon", newState.channel.name, true)
                 .addField("Membre", "<@"+oldState.member.id+">\n`"+oldState.member.id+"`", true)
                 .setColor("#25e64b")
@@ -60,7 +61,7 @@ module.exports = {
             } else if((newState.channelID == null || newState.channelID == undefined) && oldState.channelID != null) {
                 let embed = new Discord.MessageEmbed()
                 .setTitle("Déconnexion Vocale")
-                .setAuthor(newState.member.user.tag, newState.member.user.displayAvatarURL())
+                .setAuthor(newState.member.user.tag, newState.member.user.displayAvatarURL({dynamic: true}))
                 .addField("Salon quitté", oldState.channel.name, true)
                 .addField("Membre", "<@"+oldState.member.id+">\n`"+oldState.member.id+"`", true)
                 .setColor("#d1310d")
@@ -70,7 +71,7 @@ module.exports = {
             else {
                 let embed = new Discord.MessageEmbed()
                 .setTitle("Changement Salon Vocale")
-                .setAuthor(newState.member.user.tag, newState.member.user.displayAvatarURL())
+                .setAuthor(newState.member.user.tag, newState.member.user.displayAvatarURL({dynamic: true}))
                 .setDescription("`"+oldState.channel.name+"` -> `"+newState.channel.name+"`")
                 .addField("Membre", "<@"+oldState.member.id+">\n`"+oldState.member.id+"`", true)
                 .setColor("#0d9dd1")
@@ -92,7 +93,7 @@ module.exports = {
           let bvn = msg[Math.floor(Math.random() * msg.length)];
           let embed = new Discord.MessageEmbed()
           .setTitle(member.user.tag)
-          .setThumbnail(member.user.displayAvatarURL())
+          .setThumbnail(member.user.displayAvatarURL({dynamic: true}))
           .setDescription(bvn)
           .addField("Règlement", "Un petit tour dans le <#520225211149320196> stp ?")
           .addField("Vérification", "Pensez à aller dans le <#533251614279073794> agent ! ^^", true)
@@ -113,7 +114,7 @@ module.exports = {
             let embed = new Discord.MessageEmbed()
             .setColor('D0021B')
             .setTitle(member.user.tag)
-            .setThumbnail(member.user.displayAvatarURL())
+            .setThumbnail(member.user.displayAvatarURL({dynamic: true}))
             .setDescription(gb)
             .setTimestamp()
             hook.send(embed)
