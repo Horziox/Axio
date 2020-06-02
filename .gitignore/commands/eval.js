@@ -14,3 +14,4 @@ module.exports = {
             return message.channel.send(`\`${toEval}\`\n*Exécuté en ${hrDiff[0]>0 ? `${hrDiff[0]}sec` :''}${hrDiff[1]/1000000}ms.*\`\`\`javascript\n${evaluated}\n\`\`\``, {maxlengh: 1900})
         } else message.reply("oups, tu as oublié l'eval...");
     }
+}
