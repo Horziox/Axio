@@ -42,7 +42,7 @@ for (const file of commandFiles) {
 }
 
 setInterval(function() {
-	let game = ["TE surveiller ;)",prefix+"help","surveiller le Staff...", "Axio ou Vérité !? :3", "se marrer en solitaire...",]
+	let game = ["TE surveiller ;)","!help","surveiller le Staff...", "Axio ou Vérité !? :3", "se marrer en solitaire...",]
 	let status = game[Math.floor(Math.random() * game.length)];
 	bot.user.setActivity(status , {type : "PLAYING"});
 }, 5000)
