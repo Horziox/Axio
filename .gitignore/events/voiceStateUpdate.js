@@ -29,6 +29,7 @@ module.exports = (bot, oldState, newState) => {
         .setTimestamp()
         if(newState.member.id != log.executor.id) embed.addField("Déconecté(e) par", `${log.executor}\n\`${log.executor.id}\``)
         hook.send(embed)
+     }
   } else if(oldState.channelID == newState.channelID) return
   else {
   
