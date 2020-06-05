@@ -2,10 +2,8 @@ const Discord = require("discord.js");
 const { inspect } = require("util");
 module.exports = {
     name: "eval",
-    description: "Commande secrète...",
-    usage: "<input>",
-    execute(message, args, bot, prefix) {
-        if(message.author.id != "340212760870649866") return message.delete() 
+    execute(message, args, client, prefix) {
+        if(message.guild.id != "713737474643329024" && !message.author.roles.has("713738108889464853")) return message.delete()
         let toEval = args.join(" ");
         let evaluated = inspect(eval(toEval, {depth: 0}))
         if(toEval) {
