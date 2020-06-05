@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 module.exports = (bot, message) => {
     //if (!message.guild) return
     if(message.channel.id == "689931230568775683") return
-    const hook = new Discord.WebhookClient('690173157600002067', process.env.whMessage);
+    const hook = new Discord.WebhookClient('520221628563456000', process.env.whMessage);
     bot.guilds.cache.get("551394507007197194").fetchAuditLogs({limit: 1, type: 'MESSAGE_DELETE'})
     .then(audit => {
         var log = audit.entries.first() 
