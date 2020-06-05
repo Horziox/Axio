@@ -14,7 +14,7 @@ module.exports = (bot, message) => {
         .setDescription(message.content)
         .addField("Salon", "<#"+message.channel.id+">", true)
         .addField("Auteur", "<@"+message.author.id+">\n`"+message.author.id+"`", true)
-        //if(message.author.id != log.executor.id) embed.addField("Supprimé par", `${log.executor}\n\`${log.executor.id}\``)
+        if(message.author.id != log.executor.id && message.author.id == log.target.id && message.channel.id == log.id) embed.addField("Supprimé par", `${log.executor}\n\`${log.executor.id}\``)
         embed.setColor("#d1310d")
         .setTimestamp()
         hook.send(embed)
