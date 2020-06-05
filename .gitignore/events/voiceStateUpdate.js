@@ -27,7 +27,7 @@ module.exports = (bot, oldState, newState) => {
         .addField("Membre", "<@"+oldState.member.id+">\n`"+oldState.member.id+"`", true)
         .setColor("#d1310d")
         .setTimestamp()
-        if(newState.member.id != log.executor.id) embed.addField("Déconecté(e) par", `${log.executor}\n\`${log.executor.id}\``)
+        //if(newState.member.id != log.executor.id) embed.addField("Déconecté(e) par", `${log.executor}\n\`${log.executor.id}\``)
         hook.send(embed)
      }
   } else if(oldState.channelID == newState.channelID) return
@@ -46,7 +46,7 @@ module.exports = (bot, oldState, newState) => {
         .addField("Membre", "<@"+oldState.member.id+">\n`"+oldState.member.id+"`", true)
         .setColor("#0d9dd1")
         .setTimestamp()
-        if(oldState.member.id != log.executor.id) embed.addField("Déplacé(e) par", `${log.executor}\n\`${log.executor.id}\``)
+        //if(oldState.member.id != log.executor.id) embed.addField("Déplacé(e) par", `${log.executor}\n\`${log.executor.id}\``)
         hook.send(embed)
       }
    }
