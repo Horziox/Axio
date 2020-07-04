@@ -7,8 +7,8 @@ module.exports = (bot, oldState, newState) => {
       let embed = new Discord.MessageEmbed()
       .setTitle("Connexion Vocale")
       .setAuthor(oldState.member.user.tag, oldState.member.user.displayAvatarURL({dynamic: true}))
-      .addField("Salon", newState.channel.name, true)
-      .addField("Membre", "<@"+oldState.member.id+">\n`"+oldState.member.id+"`", true)
+      .addField("Salon", `${newState.channel.name}\n\`${newState.channel.id}\``, true)
+      .addField("Membre", `<@${newState.member.id}>\n\`${newState.member.id}\n`, true)
       .setColor("#25e64b")
       .setTimestamp()
       hook.send(embed)
@@ -23,17 +23,17 @@ module.exports = (bot, oldState, newState) => {
         let embed = new Discord.MessageEmbed()
         .setTitle("Déconnexion Vocale")
         .setAuthor(newState.member.user.tag, newState.member.user.displayAvatarURL({dynamic: true}))
-        .addField("Salon quitté", oldState.channel.name, true)
+        .addField("Salon quitté", `${oldState.channel.name}\n\`${oldState.channel.id}\``, true)
         .addField("Membre", "<@"+oldState.member.id+">\n`"+oldState.member.id+"`", true)
         .setColor("#d1310d")
         .setTimestamp()
-        //if(newState.member.id != log.executor.id) embed.addField("Déconecté(e) par", `${log.executor}\n\`${log.executor.id}\``)
+        if(newState.member.id === log.target.id) embed.addField("Déconecté(e) par", `${log.executor}\n\`${log.executor.id}\``)
         hook.send(embed)
      }
   } else if(oldState.channelID == newState.channelID) return
   else {
   
-     bot.guilds.cache.get("520221628563456000").fetchAuditLogs({limit: 1, type: 'MEMBER_DISCONNECT'})
+     bot.guilds.cache.get("520221628563456000").fetchAuditLogs({limit: 1, type: 'MEMBER_MOVE'})
      .then(audit => {
         var log = audit.entries.first() 
         sendLogs(log) 
@@ -42,11 +42,12 @@ module.exports = (bot, oldState, newState) => {
         let embed = new Discord.MessageEmbed()
         .setTitle("Changement Salon Vocale")
         .setAuthor(newState.member.user.tag, newState.member.user.displayAvatarURL({dynamic: true}))
-        .setDescription("`"+oldState.channel.name+"` -> `"+newState.channel.name+"`")
-        .addField("Membre", "<@"+oldState.member.id+">\n`"+oldState.member.id+"`", true)
+        .addField("Avant", `${oldState.channel.name}\n\`${oldState.channel.id}\``, true)
+        .addField("Après", `${newState.channel.name}\n\`${newState.channel.id}\``)
+        .addField("Membre", "<@"+oldState.member.id+">\n`"+oldState.member.id+"`")
         .setColor("#0d9dd1")
         .setTimestamp()
-        //if(oldState.member.id != log.executor.id) embed.addField("Déplacé(e) par", `${log.executor}\n\`${log.executor.id}\``)
+        if(oldState.member.id === log.target.id) embed.addField("Déplacé(e) par", `${log.executor}\n\`${log.executor.id}\``)
         hook.send(embed)
       }
    }
