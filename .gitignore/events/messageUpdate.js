@@ -8,7 +8,7 @@ module.exports = (bot, oldMessage, newMessage) => {
   .setTitle("Message mis à jour")
   .setAuthor(oldMessage.author.tag, oldMessage.author.displayAvatarURL({dynamic: true}))
   .setDescription("**Ancien :**\n"+oldMessage.content+"\n**Nouveau :**\n"+newMessage.content)
-  .addField("Salon", "<#"+oldMessage.channel.id+">", true)
+  .addField("Salon", `<#${oldMessage.channel.id}>\n\`${oldMessage.channel.id}\``, true)
   .addField("Auteur", "<@"+oldMessage.author.id+">\n`"+oldMessage.author.id+"`", true)
   .addField("Message", "[Aller au message]("+newMessage.url+")")
   .setColor("#0d9dd1")
