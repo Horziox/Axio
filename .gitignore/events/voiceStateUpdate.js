@@ -27,7 +27,7 @@ module.exports = (bot, oldState, newState) => {
         .addField("Membre", "<@"+oldState.member.id+">\n`"+oldState.member.id+"`", true)
         .setColor("#d1310d")
         .setTimestamp()
-        if(newState.member.id === log.target.id) embed.addField("Déconecté(e) par", `${log.executor}\n\`${log.executor.id}\``)
+        //if(newState.member.id === log.target.id) embed.addField("Déconecté(e) par", `${log.executor}\n\`${log.executor.id}\``)
         hook.send(embed)
      }
   } else if(oldState.channelID == newState.channelID) return
@@ -43,11 +43,11 @@ module.exports = (bot, oldState, newState) => {
         .setTitle("Changement Salon Vocale")
         .setAuthor(newState.member.user.tag, newState.member.user.displayAvatarURL({dynamic: true}))
         .addField("Avant", `${oldState.channel.name}\n\`${oldState.channel.id}\``, true)
-        .addField("Après", `${newState.channel.name}\n\`${newState.channel.id}\``)
+        .addField("Après", `${newState.channel.name}\n\`${newState.channel.id}\``, true)
         .addField("Membre", "<@"+oldState.member.id+">\n`"+oldState.member.id+"`")
         .setColor("#0d9dd1")
         .setTimestamp()
-        if(oldState.member.id === log.target.id) embed.addField("Déplacé(e) par", `${log.executor}\n\`${log.executor.id}\``)
+        //if(oldState.member.id === log.target.id) embed.addField("Déplacé(e) par", `${log.executor}\n\`${log.executor.id}\``)
         hook.send(embed)
       }
    }
