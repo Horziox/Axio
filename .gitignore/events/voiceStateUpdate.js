@@ -8,7 +8,7 @@ module.exports = (bot, oldState, newState) => {
       .setTitle("Connexion Vocale")
       .setAuthor(oldState.member.user.tag, oldState.member.user.displayAvatarURL({dynamic: true}))
       .addField("Salon", `${newState.channel.name}\n\`${newState.channel.id}\``, true)
-      .addField("Membre", `<@${newState.member.id}>\n\`${newState.member.id}\n`, true)
+      .addField("Membre", `<@${newState.member.id}>\n\`${newState.member.id}\``, true)
       .setColor("#25e64b")
       .setTimestamp()
       hook.send(embed)
