@@ -12,7 +12,7 @@ module.exports = (bot, message) => {
         .setTitle("Message supprimé")
         .setAuthor(message.author.tag, message.author.displayAvatarURL({dynamic: true}))
         .setDescription(message.content)
-        .addField("Salon", "<#"+message.channel.id+">", true)
+        .addField("Salon", `<#${message.channel.id}>\n\`${message.channel.id}\``, true)
         .addField("Auteur", "<@"+message.author.id+">\n`"+message.author.id+"`", true)
         if(message.author.id === log.target.id) embed.addField("Modérateur", `${log.executor}\n\`${log.executor.id}\``)
         embed.setColor("#d1310d")
